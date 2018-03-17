@@ -1,0 +1,31 @@
+body{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#container{
+    position:relative;
+}
+#content .table{
+
+
+}
+#content .table table{
+        margin:200px auto;
+        border-collapse:collapse;
+        border:1px solid black;
+        text-align: center;
+    /*border-collapse:collapse;*/
+}
+#content .table table td {
+    width:200px;
+    /*height:20px;*/
+    border:1px solid black;
+}
+#content .table table td .name,.password{
+    display:none;
+}
+a{
+    text-decoration:none;
+}
