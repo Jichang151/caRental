@@ -9,21 +9,24 @@
     <body>
         <div id="container">
             <div    id="content">
+                <div><a href="index.html">返回首页</a></div>
                 <div class="table">
-                    <table>
-                        <tr>
-                            <td>用户名:</td>
-                            <td><input placeholder="提示语..." class="name"/></td>
-                        </tr>
-                        <tr>
-                            <td>密码:</td>
-                            <td><input type="text" class="password"/></td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">忘记密码</a></td>
-                            <td><input type="button" value="登录"></td>
-                        </tr>
-                    </table>
+                    <form action="login.html" method="get">
+                        <table>
+                            <tr>
+                                <td class="un" >用户名</td>
+                                <td><input type="text" name="user" placeholder="请输入用户名..." id="username"/></td>
+                            </tr>
+                            <tr>
+                                <td class="ps" >密码</td>
+                                <td><input type="password" name="word" placeholder="请输入密码..." class="password"/></td>
+                            </tr>
+                            <tr>
+                                <td class="fpw"><a href="#">忘记密码?</a></td>
+                                <td class="commit"><input type="submit" value="立即登录" id="submit"></td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
