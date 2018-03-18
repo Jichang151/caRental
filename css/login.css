@@ -1,9 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+}
 body{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
 }
+a{
+     text-decoration:none;
+ }
 #container{
     position:relative;
 }
@@ -21,11 +28,38 @@ body{
 #content .table table td {
     width:200px;
     /*height:20px;*/
-    border:1px solid black;
+    /*border:1px solid black;*/
+
 }
 #content .table table td .name,.password{
-    display:none;
+    /*display:none;*/
 }
-a{
-    text-decoration:none;
+#content .table table .un,.ps,.fpw,.commit{
+    text-align: right;
+}
+/*#content .table table tr{*/
+    /*height:40px;*/
+/*}*/
+
+/*#content .table table td .bt{*/
+    /*width:100px;*/
+    /*float:right;*/
+    /*margin-right:12px;*/
+
+/*}*/
+/*#content .table table td a{*/
+    /**/
+/*}*/
+
+#content .table table td input{
+
+    height:25px;
+    margin:10px;
+
+}
+#content .table table .commit input{
+    margin-right:12px;
+    width:100px;
+    height:40px;
+    float:right;
 }
