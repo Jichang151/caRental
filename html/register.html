@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-wqe
-</body>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>register</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="content">
+                <div class="back">
+                    <a href="index.html">返回首页</a>
+                </div>
+                <div></div>
+                <div class="table">
+                    <fieldset>
+                        <legend>注册信息&lt必填&gt</legend>
+                        <form method="get" id="signin" >
+                            <div class="name">
+                                <label for="name">昵称</label>
+                                <input type="text" id="name" class="out" />*
+                            </div><br>
+                            <div>
+                                <label for="phone">手机号</label>
+                                <input type="text" id="phone" class="out"  />*
+                            </div><br>
+                            <div id="yzm">
+                                <label for="verify">验证码</label>
+                                <input type="text" id="verify" class="out" disabled="true"/>*
+                                <input type="button" name="yanzheng" value="获取验证码" id="dianji"/>
+                            </div><br>
+                            <div>
+                                <label for="pw1">密码</label>
+                                <input type="password" id="pw1" class="out"/>*
+                            </div><br>
+                            <div>
+                                <label for="pw2">再次输入密码</label>
+                                <input type="password" id="pw2" class="out"/>*
+                            </div><br>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
