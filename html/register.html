@@ -3,6 +3,7 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>register</title>
+        <link rel="stylesheet" href="../css/register.css"/>
     </head>
     <body>
         <div id="container">
@@ -11,33 +12,77 @@
                     <a href="index.html">返回首页</a>
                 </div>
                 <div></div>
-                <div class="table">
-                    <fieldset>
-                        <legend>注册信息&lt必填&gt</legend>
-                        <form method="get" id="signin" >
-                            <div class="name">
-                                <label for="name">昵称</label>
-                                <input type="text" id="name" class="out" />*
-                            </div><br>
-                            <div>
-                                <label for="phone">手机号</label>
-                                <input type="text" id="phone" class="out"  />*
-                            </div><br>
-                            <div id="yzm">
-                                <label for="verify">验证码</label>
-                                <input type="text" id="verify" class="out" disabled="true"/>*
-                                <input type="button" name="yanzheng" value="获取验证码" id="dianji"/>
-                            </div><br>
-                            <div>
-                                <label for="pw1">密码</label>
-                                <input type="password" id="pw1" class="out"/>*
-                            </div><br>
-                            <div>
-                                <label for="pw2">再次输入密码</label>
-                                <input type="password" id="pw2" class="out"/>*
-                            </div><br>
-                        </form>
-                    </fieldset>
+                <div class="msg">
+                    <form action="register.html">
+                        <fieldset>
+                            <legend>注册信息&lt必填&gt</legend>
+                                <div class="user_msg">
+                                    <label for="user">用户名</label>
+                                    <input type="text" id="user" placeholder="请输入用户名..."/>
+                                </div>
+                                <div class="password_msg1">
+                                    <label for="pw1">密码</label>
+                                    <input type="password" id="pw1" placeholder="请输入密码..."/>
+                                </div>
+                                <div class="password_msg2">
+                                    <label for="pw2">密码确认</label>
+                                    <input type="password" id="pw2" placeholder="请再次输入密码.."/>
+                                </div>
+                                <div class="phone_msg">
+                                    <label for="phone">手机号码</label>
+                                    <input type="text" id="phone" placeholder="请输入手机号..."/>
+                                </div>
+                                <div class="verify_msg">
+                                    <label for="verify">验证码</label>
+                                    <input type="text" id="verify" placeholder="请点击获取验证码..."/>
+                                    <input type="button" value="获取验证码" disabled="true" class="verify_get"/>
+                                </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>用户资料&lt选填&gt</legend>
+
+                                <div class="picture_msg">
+                                    <label for="picture">头像</label>
+                                    <input type="file" id="picture" />
+                                </div>
+                                <div class="sex_msg">
+                                    <label>性别</label>
+                                    <label for="male"></label>
+                                    男<input type="radio" id="male" checked="checked" name="sex"/>
+                                    <label for="female"></label>
+                                    女<input type="radio" id="female" name="sex"/>
+
+                                </div>
+                                <div class="hobby_msg">
+                                    <label for="hobby">爱好</label>
+                                    <input type="checkbox" id="hobby"/>编码
+                                    <label for="trip"></label>
+                                    <input type="checkbox" id="trip"/>旅游
+                                    <label for="run"></label>
+                                    <input type="checkbox" id="run"/>跑步
+                                </div>
+                                <div class="blood_msg">
+                                    <label for="blood">血型</label>
+                                    <select name="bloodMsg" id="blood">
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="AB">AB</option>
+                                        <option value="O">O</option>
+                                    </select>
+                                </div>
+                                <div class="signature_msg">
+                                    <label for="signature">个人描述</label>
+                                    <textarea id="signature" cols="30" rows="8">
+
+                                    </textarea>
+                                </div>
+                        </fieldset>
+                        <div class="bt">
+                            <input type="submit" value="提交" class="submit"/>
+                            <input type="reset" value="重置" class="reset"/>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
