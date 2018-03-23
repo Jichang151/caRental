@@ -7,21 +7,53 @@
         <link rel="stylesheet" href="../css/all_style.css"/>
     </head>
     <body>
-        <div id="container">
-            <div id="content">
-                <div class="p_left">
-                    <div class="header">
-                        <img src="../img/header.jpg" alt="头像"/><input type="button" value="上传头像"/>
-                        <div class="bottom"></div>
+    <div id="container">
+        <div id="tab">
+
+            <img src="../img/header.jpg" alt="头像"/>
+            <input type="button" value="上传图片"/>
+            <ul class="tab_nav">
+                <li class="selected">账号设置</li>
+                <li>我的订单</li>
+                <li>我的申请</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div class="selected">
+                <ul class="tab_msg">
+                    <li class="selected">基本信息</li>
+                    <li>密码修改</li>
+                </ul>
+                <div class="basic_msg">
+                    <div class="msg">
+                        <label for="username">用户名</label>
+                        <input type="text" id="username" placeholder="请输入用户名..."/>
                     </div>
-                    <div class="navigation">
-                        <a href="personal.html">我的申请</a>
-                        <a href="personal.html">我的订单</a>
-                        <a href="personal.html">账号设置</a>
+        <!--            <div class="sex_msg">
+                        <label>性别</label>
+                        <label for="male"></label>
+                        男<input type="radio" id="male" checked="checked" name="sex"/>
+                        <label for="female"></label>
+                        女<input type="radio" id="female" name="sex"/>
+
+                    </div>-->
+                    <div class="msg">
+                        <label for="age">年龄</label>
+                        <input type="text" id="age" placeholder="请输入年龄..."/>
+                    </div>
+                    <div class="msg">
+                        <label for="phone">手机号</label>
+                        <input type="text" id="phone" placeholder="请输入手机号..."/>
+                    </div>
+                    <div class="msg">
+                        <label for="address">地址</label>
+                        <input type="text" id="address" placeholder="请输入地址..."/>
                     </div>
                 </div>
-                <div class="p_right"></div>
             </div>
+            <div></div>
+            <div></div>
         </div>
+    </div>
     </body>
 </html>
