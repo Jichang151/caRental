@@ -25,10 +25,9 @@ html,body{
 }
 #tab img{
     width:100px;
-
     height:100px;
 }
-#tab .tab_nav{
+#tab .nav{
     width:100%;
     height:60%;
     /*background-color: blue;*/
@@ -36,16 +35,18 @@ html,body{
     overflow: hidden;
 }
 
-#tab .tab_nav li{
-    width:80%;
+#tab .nav li{
+    width:150px;
     height:40px;
     /*background-color: yellow;*/
-    margin:10% auto;
+    margin:20px auto;
     line-height:40px;
     cursor:pointer;
+    /*color:#fff;*/
 }
-#tab .tab_nav .selected{
-    background-color: #cccccc;
+#tab .nav .selected{
+    background-color: #aaaaaa;
+    color: #ffffff;;
 }
 #content{
     width: 68%;
@@ -53,6 +54,10 @@ html,body{
     float:left;
     background-color: #3d444c;
     margin-top:5%;
+}
+
+#content .selected,.basic{
+    display:block;
 }
 
 #content .tab_msg{
@@ -70,37 +75,144 @@ html,body{
     margin:5px 0 5px 60px;
     cursor:pointer;
     line-height:30px;
+    /*color:#fff;*/
 }
-#content .tab_msg .selected{
+#content .tab_msg .tab_selected{
     background-color: #ccc;
+    color:#fff;
 }
-#content .basic_msg{
+#basic{
     width:600px;
     height:400px;
     /*background-color: gray;*/
     margin-top:30px;
+
 }
 
-#content .basic_msg div{
+#basic input{
+    float:left;
+}
+#basic label{
+    float:left;
+}
+#basic div{
     width:400px;
     height:50px;
     /*background-color: tan;*/
     margin-top:10px;
 }
-#content .basic_msg div label{
+#basic div label{
     width:100px;
     height:50px;
     float:left;
     text-align: center;
-    line-height:50px;
+    /*line-height:50px;*/
 }
-#content .basic_msg .msg input{
+#basic .msg input{
     width:200px;
     height:30px;
     /*line-height: 30px;*/
     float:left;
-    margin:10px 0 0 50px;
+}
+#basic .sex_msg input{
+    vertical-align:middle; margin-bottom:2px; *margin-bottom:2px;
+}
+#basic .sex_msg .sex{
+    width:20px;
+    height:20px;
+    margin:5px 5px 2px 5px;
+}
+#content .selected .bt{
+    margin-left:500px;
+    background-color: #fff;
+    width:100px;
+    height:40px;
+}
+#content .selected .bt input{
+    width:100px;
+    height:40px;
+    display:block;
+}
+#content .selected{
+    /*display:none;*/
+}
+#content .change_pw{
+    /*display:none;*/
+}
+#content .change_pw div{
+    width:400px;
+    height:50px;
+    /*background-color:#234234;*/
+    margin-top:30px;
+}
+#content .change_pw label{
+    width:100px;
+    height:50px;
+    /*background-color: #345345;*/
+    float:left;
+}
+#content .change_pw input{
+    width:200px;
+    height:30px;
+    /*background-color: #456456;*/
+    float:left;
+}
+#content .change_pw .bt{
+    margin-left:500px;
+    background-color: #fff;
+    width:100px;
+    height:40px;
+
+}
+#content .myOrder .order{
+    width:100px;
+    height:20px;
+    margin:20px auto;
+}
+#content .myOrder .order b{
+    font-size: 24px;
+}
+#content .myOrder .orderMsg table,td,tr{
+    margin:150px auto;
+    border-collapse:collapse;
+    border:1px solid black;
+    text-align: center;
+}
+#content .myOrder .orderMsg table{
+
+    width:90%;
+
+}
+#content .myOrder .orderMsg tr{
+    height:40px;
 }
 
+#content .myOrder .orderMsg table .header{
+    background-color: goldenrod;
+}
+#content .myApply .apply{
+    width:100px;
+    height:20px;
+    margin:20px auto;
 
+}
+#content .myApply .apply b{
+    font-size: 24px;
+}
+#content .myApply .applyMsg table,td,tr{
+    margin:150px auto;
+    border-collapse:collapse;
+    border:1px solid black;
+    text-align: center;
+}
+#content .myApply .applyMsg table .header{
+    background-color: goldenrod;
+}
+#content .myApply .applyMsg table{
 
+    width:90%;
+
+}
+#content .myApply .applyMsg tr{
+    height:40px;
+}
