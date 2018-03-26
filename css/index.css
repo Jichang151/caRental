@@ -6,6 +6,9 @@ ul li{
     float:left;
 
 }
+#header .main_navigation .center_navigation ul li:hover{
+    background-color: #567567;
+}
 a{
     color:#fff;
 }
@@ -28,6 +31,13 @@ a{
     /*background-color: #123123;*/
     text-align: center;
     line-height:54px;
+    /*font-size:24px; */
+}
+#header .left_navigation a{
+    display:block;
+    width:100%;
+    height:54px;
+    font-size:24px;
 }
 #header .center_navigation{
     float: left;
@@ -36,19 +46,29 @@ a{
     height:54px;
     /*background-color: #cccccc;*/
 }
+#header .center_navigation ul{
+    margin:0 auto;
+    width:80%;
+    height:54px;
+}
 #header .center_navigation ul li{
 
-    width:10%;
+    width:16%;
     height:54px;
     text-align: center;
     line-height:54px;
     /*background-color: green;*/
-    margin-left:40px;
+    margin:0 auto;
+    /*cursor: pointer;*/
+
 }
 #header .center_navigation ul li a{
     width:100%;
     height: 54px;
+    display:block;
+    /*background-color: olive;*/
 }
+
 #header .right_navigation{
    width:20%;
     height:54px;
@@ -56,17 +76,85 @@ a{
 
     /*background-color: blue;*/
 }
-#header .right_navigation a{
+#header .right_navigation div{
     float:right;
     height:54px;
     width:30%;
-    line-height:54px;
+
     /*background-color: #000;*/
-    margin:0 2px;
-    text-align: center;
+
+
 
     border-left: 1px solid #cccccc;
+}
+#header .right_navigation a{
+    width:70px;
+    /*float:right;*/
+    height:20px;
+    line-height:20px;
+    display:block;
+    border-radius: 15px;
+    text-align: center;
+    margin:17px auto;
+    background-color: orangered;
 }
 #header .center_navigation .index{
     background-color: #cccccc;
 }
+#content{
+    position:relative;
+    width:100%;
+    height:500px;
+}
+#content .picture{
+    position:absolute;
+    width:100%;
+    height:500px;
+}
+#content .picture img{
+    width:100%;
+    height:100%;
+    position:absolute;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    opacity: 0;
+    filter:alpha(opacity=0);
+
+}
+#content .picture .selected{
+    filter:alpha(opacity=1);
+    opacity:1;
+}
+
+#content ul{
+    position:absolute;
+    width:60px;
+    height:20px;
+    /*background-color: red;*/
+    left:600px;
+    bottom:60px;
+    z-index:9999;
+}
+/*#content ul .selected{*/
+    /*background-color: #ccc;*/
+/*}*/
+#content ul li{
+    width:15px;
+    height:15px;
+    line-height:15px;
+    background: #cccccc;
+
+    filter:alpha(opacity=20);
+    opacity: 0.2;
+    margin-left:10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor:pointer;
+}
+#content ul .selected{
+    filter:alpha(opacity=70);
+    opacity: 0.7;
+}
+
