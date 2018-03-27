@@ -17,24 +17,46 @@ window.onload = function(){
         //console.log(aConUl);
         var aConLi = aConUl[0].getElementsByTagName('li');
         //console.log(aConLi);
-        for(var i=0;i<aConLi.length;i++){
-            aConLi[i].onmouseover = function(){
-                for(var i=0;i<aConLi.length;i++){
-                    aConLi[i].className = '';
-                }
-                this.className = 'selected';
-            }
+        var current = 0;
+
+
+        function slideOff(){
+            aConImg[current].className = '';
+            aConLi[current].className = '';
+        }
+        function slideOn(){
+            aConImg[current].className = 'selected';
+            aConLi[current].className = 'selected';
         }
 
         function changeImg(){
+            slideOff();
+            current++;
+            if(current>=2){
+                current = 0;
+            }
+            slideOn();
+        }
 
-            //var aPicture = oContent.getElementsByClassName('picture');
-            //console.log(aLiNav);
+        var autoChange = setInterval(changeImg,3000);
+        oContent.onmouseover = function(){
+            clearInterval(autoChange);
+        };
+        oContent.onmouseout = function(){
+            autoChange = setInterval(changeImg,3000);
+        };
 
-            for(var i=0;i<aConImg.length;i++){
+
+        for(var i=0;i<aConLi.length;i++){
+            aConLi[i].index = i;
+            aConLi[i].onmouseover = function(){
+                clearInterval(autoChange);
+                slideOff();
+                current = this.index;
+                slideOn();
+
 
             }
-
         }
     })();
 };
