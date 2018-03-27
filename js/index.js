@@ -39,10 +39,10 @@ window.onload = function(){
         }
 
         var autoChange = setInterval(changeImg,3000);
-        oContent.onmouseover = function(){
+        aPicture.onmouseover = function(){
             clearInterval(autoChange);
         };
-        oContent.onmouseout = function(){
+        aPicture.onmouseout = function(){
             autoChange = setInterval(changeImg,3000);
         };
 
