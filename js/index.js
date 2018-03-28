@@ -17,6 +17,8 @@ window.onload = function(){
         //console.log(aConUl);
         var aConLi = aConUl[0].getElementsByTagName('li');
         //console.log(aConLi);
+        var oLogin = document.getElementById('login');
+        var oRegister = document.getElementById('register');
         var current = 0;
 
 
@@ -58,5 +60,33 @@ window.onload = function(){
 
             }
         }
+
+        //var m = JSON.stringify(window.sessionStorage.userMsg);
+        var j= JSON.parse(window.sessionStorage.userMsg);
+        if(j.status == '000000'){
+
+            oLogin.innerHTML = '退出登陆';
+            oLogin.style.width = '100px';
+            oRegister.style.display = 'none';
+
+        }
+        oLogin.onclick = function(){
+            sessionStorage.remove(j);
+            oLogin.href = 'index.html';
+            oLogin.innerHTML = '登陆';
+            oLogin.style.width = '70px';
+            oRegister.style.display = 'block';
+            oRegister.style.width = '70px';
+            alert(j);
+        };
+
+      //console.log(localStorage.getItem('result'));
+      //  console.log(j.message);
+      //  console.log(j);
+        //var s = window.localStorage;
+        //console.log(s);
+       /* var m = JSON.parse(s);
+        //localStorage.
+        console.log(m.message);*/
     })();
 };

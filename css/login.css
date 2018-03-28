@@ -1,53 +1,70 @@
 #container{
     /*position:relative;*/
 }
-#content .table{
-
-
-}
-#content .table table{
-        margin:200px auto;
-        border-collapse:collapse;
-        border:1px solid black;
-        text-align: center;
+#content .table {
+    width: 400px;
+    height: 300px;
     background-color: #cccccc;
-    /*border-collapse:collapse;*/
+    margin: 150px auto;
 }
-#content .table table td {
-    width:150px;
-    /*height:20px;*/
-    /*border:1px solid black;*/
-
+#content .table div{
+    width:400px;
+    height:50px;
+    /*background-color: red;*/
+    margin-top:25px;
 }
-#content .table table td .name,.password{
-    /*display:none;*/
+#content .table span{
+    /*text-align:center;*/
+    width:120px;
+    height:50px;
+    float:left;
+    text-align:right;
+    line-height:50px;
 }
-#content .table table .un,.ps,.fpw,.commit{
+#content .table input{
+    width:180px;
+    height:30px;
+    float:left;
+    margin:10px 50px;
+    /*display:block;*/
+    /*line-height:20px;*/
+}
+#content .table a{
+    float:left;
+    width:120px;
+    height:50px;
+    line-height:50px;
     text-align: right;
 }
-/*#content .table table tr{*/
-    /*height:40px;*/
-/*}*/
-
-/*#content .table table td .bt{*/
-    /*width:100px;*/
-    /*float:right;*/
-    /*margin-right:12px;*/
-
-/*}*/
-/*#content .table table td a{*/
-    /**/
-/*}*/
-
-#content .table table td input{
-
-    height:25px;
-    margin:10px;
+#submit{
+    width:100px;
 
 }
-#content .table table .commit input{
-    margin-right:12px;
+#user b{
+    float:left;
+    width:400px;
+    height:20px;
+
+
+    color:red;
+    font-size:12px;
+    text-align: right;
+}
+#content img{
     width:100px;
-    height:40px;
-    float:right;
+    height:20px;
+    float:left;
+    /*background-color: #cccccc;*/
+}
+#code
+{
+    font-family:Arial;
+    font-style:italic;
+    font-weight:bold;
+    border:0;
+    letter-spacing:2px;
+    color:blue;
+}
+#verify{
+    display:none;
 }
