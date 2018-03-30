@@ -23,16 +23,16 @@ window.onload = function(){
         var current = 0;
 
 
-        function slideOff(){
+        function slideOff(){    //淡出
             aConImg[current].className = '';
             aConLi[current].className = '';
         }
-        function slideOn(){
+        function slideOn(){     //耽误
             aConImg[current].className = 'selected';
             aConLi[current].className = 'selected';
         }
 
-        function changeImg(){
+        function changeImg(){   //淡入淡出
             slideOff();
             current++;
             if(current>=2){
@@ -41,12 +41,12 @@ window.onload = function(){
             slideOn();
         }
 
-        var autoChange = setInterval(changeImg,2500);
+        var autoChange = setInterval(changeImg,2500); //定时器，自动轮播
         for(i=0;i<aPicture.length;i++){
-            aPicture[i].onmouseover = function(){
+            aPicture[i].onmouseover = function(){   //滑入图片清除定时器
                 clearInterval(autoChange);
             };
-            aPicture[i].onmouseout = function(){
+            aPicture[i].onmouseout = function(){    //滑出设置定时器
                 autoChange = setInterval(changeImg,2500);
             };
         }
@@ -55,7 +55,7 @@ window.onload = function(){
 
         for(var i=0;i<aConLi.length;i++){
             aConLi[i].index = i;
-            aConLi[i].onmouseover = function(){
+            aConLi[i].onmouseover = function(){        //滑入圆点
                 clearInterval(autoChange);
                 slideOff();
                 current = this.index;
@@ -67,14 +67,14 @@ window.onload = function(){
 
         //var m = JSON.stringify(window.sessionStorage.userMsg);
         var j= JSON.parse(window.sessionStorage.userMsg);
-        if(j.status == '000000'){
+        if(j.status == '000000'){   //登录成功,个人中心显示，清除注册
 
             oLogin.innerHTML = '退出登陆';
             oLogin.style.width = '100px';
             oRegister.style.display = 'none';
             oPersonal.style.display = 'block';
         }
-        oLogin.onclick = function(){
+        oLogin.onclick = function(){    //退出登录清除缓存，
             window.sessionStorage.clear();
                 if(window.sessionStorage){
                     oLogin.href = 'index.html';
