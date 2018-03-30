@@ -169,7 +169,7 @@ body,html{
     height:15px;
     line-height:15px;
     background: #000;
-
+    //各浏览器兼容问题
     transition:opacity .5s linear;
     filter:alpha(opacity=50);
     opacity: 0.5;
@@ -190,7 +190,7 @@ body,html{
     height:8%;
     background-color: #ffffff;
     top:61%;
-    left:50%;
+    left:50%;                           /* 高度未知 居中*/
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
@@ -207,7 +207,7 @@ body,html{
     position:absolute;
     top:50%;
     left: 7%;
-    /*background-color: #fff;*/
+    /*background-color: #000;*/
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -215,6 +215,17 @@ body,html{
     transform: translateY(-50%);
 }
 #content .kind select{
+    position:absolute;
+    top:50%;
+    width:10%;
+    height:50%;
+    display:block;
+    margin-right:20px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
     background: rgba(0,0,255,0.2);
 }
 #version{
@@ -240,4 +251,35 @@ body,html{
     -o-transform: translateY(-50%);
     transform: translateY(-50%);
     border:1px solid #000000;
+}
+#search{                  /*搜索按钮*/
+    width:30%;
+    height:50%;
+    display:block;
+    /*float:right;*/
+    /*background-color: red;*/
+    position:absolute;
+    right:7%;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+}
+#search input{
+    /*text-align: center;*/
+    width:55%;
+    height:100%;
+    float:left;
+    border: 1px solid blueviolet;
+}
+#search button{
+    width: 28%;
+    height:100%;
+    float:left;
+    border:1px solid blueviolet;
+    margin-left:10px;
+
 }

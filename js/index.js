@@ -19,6 +19,7 @@ window.onload = function(){
         //console.log(aConLi);
         var oLogin = document.getElementById('login');
         var oRegister = document.getElementById('register');
+        var oPersonal = document.getElementById('personal');
         var current = 0;
 
 
@@ -40,13 +41,16 @@ window.onload = function(){
             slideOn();
         }
 
-        var autoChange = setInterval(changeImg,3000);
-        aPicture.onmouseover = function(){
-            clearInterval(autoChange);
-        };
-        aPicture.onmouseout = function(){
-            autoChange = setInterval(changeImg,3000);
-        };
+        var autoChange = setInterval(changeImg,2500);
+        for(i=0;i<aPicture.length;i++){
+            aPicture[i].onmouseover = function(){
+                clearInterval(autoChange);
+            };
+            aPicture[i].onmouseout = function(){
+                autoChange = setInterval(changeImg,2500);
+            };
+        }
+
 
 
         for(var i=0;i<aConLi.length;i++){
@@ -68,18 +72,21 @@ window.onload = function(){
             oLogin.innerHTML = '退出登陆';
             oLogin.style.width = '100px';
             oRegister.style.display = 'none';
-
+            oPersonal.style.display = 'block';
         }
         oLogin.onclick = function(){
-            sessionStorage.remove(j);
-            oLogin.href = 'index.html';
-            oLogin.innerHTML = '登陆';
-            oLogin.style.width = '70px';
-            oRegister.style.display = 'block';
-            oRegister.style.width = '70px';
-            alert(j);
-        };
+            window.sessionStorage.clear();
+                if(window.sessionStorage){
+                    oLogin.href = 'index.html';
+                    oLogin.innerHTML = '登陆';
+                    oLogin.style.width = '70px';
+                    oRegister.style.display = 'block';
+                    oRegister.style.width = '70px';
+                }
 
+
+
+        };
       //console.log(localStorage.getItem('result'));
       //  console.log(j.message);
       //  console.log(j);

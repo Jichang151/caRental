@@ -72,7 +72,7 @@
             code += random[index];//根据索引取得随机数加到code上
         }
         checkCode.value = code;//把code值赋给验证码
-    };
+    }
 
     window.sessionStorage.erroTime = 1;
     function getXMLHttpRequest() {
@@ -104,7 +104,7 @@
                     alert(JSON.parse(j).message);
                     window.location.href='index.html';
                 }else{
-                    window.sessionStorage.erroTime = 0;
+                    window.sessionStorage.erroTime = 1;
 
                 }
 
