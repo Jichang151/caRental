@@ -1,7 +1,6 @@
 /**
  * Created by 1 on 2018/3/25.
  */
-window.onload = function(){
     (function(){
         var oHeader = document.getElementById('header');
         var aMainNav = oHeader.getElementsByClassName('main_navigation');
@@ -64,29 +63,36 @@ window.onload = function(){
 
             }
         }
-
+        window.sessionStorage.erroTime = 1;
         //var m = JSON.stringify(window.sessionStorage.userMsg);
-        var j= JSON.parse(window.sessionStorage.userMsg);
-        if(j.status == '000000'){   //登录成功,个人中心显示，清除注册
+        var a=window.sessionStorage.userMsg;
+        if (a){
+            alert(a);
+            var j= JSON.parse(a);
 
+
+        if(j.status == '000000'){   //登录成功,个人中心显示，清除注册
             oLogin.innerHTML = '退出登陆';
             oLogin.style.width = '100px';
             oRegister.style.display = 'none';
             oPersonal.style.display = 'block';
-        }
-        oLogin.onclick = function(){    //退出登录清除缓存，
-            window.sessionStorage.clear();
-                if(window.sessionStorage){
+            oLogin.onclick = function(){    //退出登录清除缓存，
+                window.sessionStorage.clear();
+               // if(!window.sessionStorage.userMsg){
                     oLogin.href = 'index.html';
                     oLogin.innerHTML = '登陆';
                     oLogin.style.width = '70px';
                     oRegister.style.display = 'block';
                     oRegister.style.width = '70px';
-                }
-
-
-
+                    //console.log(window.sessionStorage.userMsg.status);
+               // }
         };
+        }
+
+
+
+        }
+
       //console.log(localStorage.getItem('result'));
       //  console.log(j.message);
       //  console.log(j);
@@ -96,4 +102,6 @@ window.onload = function(){
         //localStorage.
         console.log(m.message);*/
     })();
-};
+
+
+

@@ -2,7 +2,7 @@
  * Created by 1 on 2018/3/17.
  */
 
-(function(){
+
 
     var oContent = document.getElementById("content");
     //console.log(oContent);
@@ -74,7 +74,7 @@
         checkCode.value = code;//把code值赋给验证码
     }
 
-    window.sessionStorage.erroTime = 1;
+
     function getXMLHttpRequest() {
         var data = {
             phone:oUserName.value,
@@ -94,22 +94,20 @@
 
                 var j = xhr.responseText;
                 //console.log(j);
-                //var a = JSON.parse(j);
-                window.sessionStorage.userMsg = j;
-                //alert(j);
-                if(j.status != '000000'){
+                var a = JSON.parse(j);
+                if(a.status != '000000'){
                     window.sessionStorage.erroTime++ ;
-                    //alert(window.localStorage.erroTime);
                     createCode();
-                    alert(JSON.parse(j).message);
-                    window.location.href='index.html';
+                    alert(a.message);
                 }else{
-                    window.sessionStorage.erroTime = 1;
 
+                    window.sessionStorage.userMsg = j;
+                    window.sessionStorage.erroTime = 1;
+                    window.location.href='index.html';
                 }
 
 
-                //console.log(a);
+
             }
         }
 
@@ -149,4 +147,3 @@
     bt();
 
 
-})();
