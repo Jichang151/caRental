@@ -8,13 +8,15 @@
     </head>
     <body>
         <div id="container">
+            <div class="back">
+                <a href="index.html">返回首页</a>
+            </div>
+            <span></span>
             <div id="content">
-                <div class="back">
-                    <a href="index.html">返回首页</a>
+                <div class="img">
+                    <img src="https://s2.d2scdn.com/static/img/loginpic.jpg" alt="register_image">
                 </div>
-                <div></div>
                 <div class="msg">
-                    <form action="register.html">
                         <fieldset>
                             <legend>注册信息&lt必填&gt</legend>
                                 <div class="user_msg">
@@ -36,16 +38,16 @@
                                 <div class="verify_msg">
                                     <label for="verify">验证码</label>
                                     <input type="text" id="verify" placeholder="请点击获取验证码..."/>
-                                    <input type="button" value="获取验证码" disabled="true" class="verify_get"/>
+                                    <!--<input type="button" id="verifyBt" value="获取验证码" />-->
+                                    <button id="verifyBt" disabled="true">获取验证码</button>
                                 </div>
+
                         </fieldset>
+                    <div class="bt">
+                        <input type="submit" value="注册" id="submit"/>
+                        <input type="reset" value="重置" id="reset"/>
+                    </div>
 
-
-                        <div class="bt">
-                            <input type="submit" value="提交" class="submit"/>
-                            <input type="reset" value="重置" class="reset"/>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>

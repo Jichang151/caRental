@@ -3,6 +3,8 @@
  */
 
 
+window.onload = function(){
+
 
     var oContent = document.getElementById("content");
     //console.log(oContent);
@@ -21,7 +23,7 @@
 
 
         if(oUserName.value.length != 11 ){
-            if(oUser.children.length<=2){
+            if(oUser.children.length<=2){   //格式错误在oUser里面添加一个提示
                 oSpan = document.createElement('b');
                 oUser.appendChild(oSpan);
                 oSpan.innerHTML = '用户名格式不对!';
@@ -60,6 +62,9 @@
         }
 
     };
+
+
+//      创建验证码
     function createCode(){
         code = "";
         var codeLength = 4;//验证码的长度
@@ -97,7 +102,7 @@
                 var a = JSON.parse(j);
                 if(a.status != '000000'){
                     window.sessionStorage.erroTime++ ;
-                    createCode();
+                    //createCode();
                     alert(a.message);
                 }else{
 
@@ -147,3 +152,4 @@
     bt();
 
 
+};

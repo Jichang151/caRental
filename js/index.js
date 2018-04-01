@@ -65,9 +65,10 @@
         }
         window.sessionStorage.erroTime = 1;
         //var m = JSON.stringify(window.sessionStorage.userMsg);
+        //userMsg缓存存在时
         var a=window.sessionStorage.userMsg;
         if (a){
-            alert(a);
+            //alert(a);
             var j= JSON.parse(a);
 
 

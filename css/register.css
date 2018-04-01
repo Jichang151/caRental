@@ -1,64 +1,115 @@
+html,body{
+    width:100%;
+    height:100%;
+    /*background-color: blue;*/
+}
+a{
+    color:#3d444c;
+    font-size: 16px;
+    display: block;
+    margin:10px 20px;
+}
 #container{
     width:100%;
     height:100%;
+    /*background-color: red;*/
+    overflow:hidden;
+    position: relative;
 }
+
 #content{
+    width:100%;
+    height:80%;
+    /*background-color: #eeeeee;*/
+    margin-top:30px;
+    position: absolute;
+
+}
+#content .img img{
     width:40%;
-    height:100%;
-    background-color: #eeeeee;
-    margin:0 auto;
+    height:50%;
+    float:left;
+    margin: 70px 100px;
 }
 #content .msg{
-    /*margin:0 auto;*/
-    width:510px;
-    /*height:610px;*/
-    /*background: red;*/
-    margin-left:20px;
+    position:absolute;
+    right:20px;
+    /*background-color: #cccccc;*/
+    width:550px;
+    height:100%;
+/*background: blue;*/
+/*margin-left:20px;*/
 }
 #content .msg fieldset{
     margin:0 auto;
-    width:500px;
-    /*height:600px;*/
-    /*display:block;*/
+    width:550px;
+    height:98%;
+    display:block;
+
     border:1px solid #ccc;
     font:bold 12px/1.5em "Microsoft YaHei";
 }
 #content .msg legend{
     text-align:center;
-    /*border:1px solid #333;*/
-}
-#content .msg form{
-    text-align: center;
+    /*border:1px solid #345345;*/
+    color: #345345;
+    font-size: 18px;
 }
 #content .msg div{
-    margin:20px;
+    margin:50px 60px;
 }
 #content .msg div label{
     width:100px;
     height:20px;
     float:left;
     text-align:right;
-    /*background: #000;*/
+    line-height:20px;
+    margin-top:5px;
+    color:#3d444c;
 }
 #content .msg div input{
+    border: 1px solid #cccccc;
     height:30px;
-}
-#verify{
-    background-color: #cccccc;
-}
-#content .msg .bt{
-    width:500px;
-}
-#content .msg .submit{
-    width:50px;
-    height:30px;
-    float:left;
-    margin:10px 70px;
+    margin-left:35px;
 
 }
-#content .msg .reset{
-    width:50px;
+#verifyBt{
+    width:70px;
+    height:30px;
+}
+
+#content .msg .bt{
+    width: 300px;
+    margin: 0 auto;
+}
+#submit{
+    width:80px;
     height:30px;
     float:left;
-    margin:10px 70px;
+    background-color: orangered;
+
+    border-radius: 5px;
+    color: #cccccc;
+    cursor:pointer;
 }
+#reset{
+    width:80px;
+    height:30px;
+    float:left;
+    background-color: orangered;
+
+    border-radius: 5px;
+    color: #cccccc;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
