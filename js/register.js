@@ -19,10 +19,10 @@ window.onload = function(){
         var aMsg = oContent.getElementsByClassName('msg');
         var aFieldset = aMsg[0].getElementsByTagName('fieldset');
         var aInput =  aFieldset[0].getElementsByTagName('input');
-
+        var wait = 6;
      //前台判断注册信息格式
 
-      /*  for(var i=0;i<aInput.length;i++){
+ /*       for(var i=0;i<aInput.length;i++){
             aInput[i].onblur = function(){
                 if(oUser.value.length>16||oUser.value.length<4){
                     alert('用户名必须为4~16位！');
@@ -46,7 +46,7 @@ window.onload = function(){
                 }
             }
         }*/
-        var flag = false;
+        /*var flag = false;
         //function format(){
         oUser.onblur = function(){
             if(oUser.value && oUser.value.length>16){
@@ -82,7 +82,7 @@ window.onload = function(){
                 return 0
             }
         };
-
+*/
         //}
         oReset.onclick = function(){
           for(var i=0;i<aInput.length;i++){
@@ -117,6 +117,7 @@ window.onload = function(){
 
                     }else{
                         alert(jsonData.message);
+                        return false;
                     }
                 }
             }
@@ -124,24 +125,56 @@ window.onload = function(){
 
         //format();
         oSubmit.onclick = function(){
-            if(oUser.value.length<=16 && oPw1.value.length>=6 && oPw1.value.length<=16 && oPw2.value == oPw1.value && oPhone.value[0] == 1 && oPhone.value.length == 11){
-                flag = true
-            }
-            for(var i=0;i<aInput.length;i++){
-                if(aInput[i].value.length == 0){
+
+            for(var i=0;i<aInput.length;i++) {
+                if (aInput[i].value.length == 0) {
                     alert('请把信息填写完整！');
                     break;
+                }else if(oUser.value.length>16||oPw1.value.length<6||
+                    oPw1.value.length>16||oPw2.value != oPw1.value||oPhone.value[0] != 1||
+                    oPhone.value.length != 11){
+                    alert('注册格式错误！');
+                    break;
+                }else{
+
+                    setXMLHttpRequest();
+                    break;
+
                 }
-                if(i==aInput.length-1){
-                    if(flag){
-                        setXMLHttpRequest();
-                    }else{
-                        alert('注册格式错误！')
-                    }
+            }
+        };
+        //手机号码格式正确并且取消焦点时候验证码按钮显示
+        oPhone.onkeyup = function(){
+            if(oPhone.value.length == 11 && oPhone.value[0] == 1){
+                oVerifyBt.disabled = false;
+                oVerifyBt.innerHTML = '获取验证码';
+            }else{
+                oVerifyBt.disabled = true;
+
+            }
+
+        };
+        //点获取验证码出现倒计时
+        oVerifyBt.onclick = function(){
+            oVerifyBt.disabled = true;
+            if(wait ==6) {
+                for (var i = 0; i < 6; i++) {
+                    setTimeout(function () {
+                        wait--;
+                        oVerifyBt.innerHTML = '获取验证码(' + wait + 's)';
+                        if (wait <= 0) {
+                            oVerifyBt.disabled = false;
+                            oVerifyBt.innerHTML = '获取验证码';
+                            wait = 6;
+                        }
+                    }, i * 1000);// 代表 "每" 隔一秒wait--
                 }
             }
 
-
         };
+
+
+
+
     })();
 };
