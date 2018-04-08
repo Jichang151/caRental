@@ -19,7 +19,7 @@ window.onload = function(){
         var aMsg = oContent.getElementsByClassName('msg');
         var aFieldset = aMsg[0].getElementsByTagName('fieldset');
         var aInput =  aFieldset[0].getElementsByTagName('input');
-        var wait = 6;
+        var wait = 60;
      //前台判断注册信息格式
 
  /*       for(var i=0;i<aInput.length;i++){
@@ -104,7 +104,7 @@ window.onload = function(){
             };
 
             var xhr = new XMLHttpRequest();
-            xhr.open('POST','http://47.100.164.170:8080/RentCar/user/register');
+            xhr.open('POST','http://192.168.1.105:8080/user/register');
             xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
             xhr.send(JSON.stringify(data));
             xhr.onreadystatechange = function(){
@@ -146,6 +146,8 @@ window.onload = function(){
         //手机号码格式正确并且取消焦点时候验证码按钮显示
         oPhone.onkeyup = function(){
             if(oPhone.value.length == 11 && oPhone.value[0] == 1){
+
+
                 oVerifyBt.disabled = false;
                 oVerifyBt.innerHTML = '获取验证码';
             }else{
@@ -154,25 +156,54 @@ window.onload = function(){
             }
 
         };
-        //点获取验证码出现倒计时
+        //点获取验证码出现倒计时判断手机号是否存在
         oVerifyBt.onclick = function(){
-            oVerifyBt.disabled = true;
-            if(wait ==6) {
-                for (var i = 0; i < 6; i++) {
-                    setTimeout(function () {
-                        wait--;
-                        oVerifyBt.innerHTML = '获取验证码(' + wait + 's)';
-                        if (wait <= 0) {
-                            oVerifyBt.disabled = false;
-                            oVerifyBt.innerHTML = '获取验证码';
-                            wait = 6;
+                var data = {
+                    phone:oPhone.value,
+                    type:"REGISTER"
+                };
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST','http://192.168.1.105:8080/user/sendCaptcha');
+                xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
+                xhr.send(JSON.stringify(data));
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4 && xhr.status == 200){
+                        var acceptData = xhr.responseText;
+                        var jsonData = JSON.parse(acceptData);
+                        if(jsonData.status == '400002'){
+                            alert(jsonData.message);
+                        }else{
+                            oVerifyBt.disabled = true;
+                            if(wait == 60) {
+                                for (var i = 0; i < 60; i++) {
+                                    setTimeout(function () {
+                                        wait--;
+                                        oVerifyBt.innerHTML = '获取验证码(' + wait + 's)';
+                                        if (wait <= 0) {
+                                            oVerifyBt.disabled = false;
+                                            oVerifyBt.innerHTML = '获取验证码';
+                                            wait = 60;
+                                        }
+                                    }, i * 1000);// 代表 "每" 隔一秒wait--
+                                }
+                            }
                         }
-                    }, i * 1000);// 代表 "每" 隔一秒wait--
-                }
-            }
+                    }
+                };
+
+
+
+
+
+
+
+
+
+            //点获取验证码出现倒计时
+
 
         };
-
 
 
 

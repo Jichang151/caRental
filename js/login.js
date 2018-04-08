@@ -86,7 +86,7 @@ window.onload = function(){
             password:oPassWord.value
         };
         var xhr = new XMLHttpRequest();
-        xhr.open('POST','http://47.100.164.170:8080/RentCar/user/login');
+        xhr.open('POST','http://47.100.164.170:8080/user/login');
         //xhr.Header("Access-Control-Allow-Origin:*");//允许所有来源访问
         //xhr.addHeader("Access-Control-Allow-Method:POST,GET");//允许访问的方式
         xhr.setRequestHeader('Content-type','application/json;charset=UTF-8');
