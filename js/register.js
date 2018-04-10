@@ -104,7 +104,7 @@ window.onload = function(){
             };
 
             var xhr = new XMLHttpRequest();
-            xhr.open('POST','http://192.168.1.105:8080/user/register');
+            xhr.open('POST','http://47.100.164.170:8080/user/register');
             xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
             xhr.send(JSON.stringify(data));
             xhr.onreadystatechange = function(){
@@ -164,7 +164,7 @@ window.onload = function(){
                 };
 
                 var xhr = new XMLHttpRequest();
-                xhr.open('POST','http://192.168.1.105:8080/user/sendCaptcha');
+                xhr.open('POST','http://47.100.164.170:8080/user/sendCaptcha');
                 xhr.setRequestHeader('Content-type','application/json;charset=utf-8');
                 xhr.send(JSON.stringify(data));
                 xhr.onreadystatechange = function(){
